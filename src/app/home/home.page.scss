@@ -1,0 +1,53 @@
+.background-image{
+    --background: url('../home/w1.gif') 0 0/100% 100% no-repeat;
+}
+
+ .location{
+     // -webkit-text-fill-color: rgb(233, 239, 245);
+     text-align: center;
+     //position: fixed;
+	top: 6;
+	left: 0;
+	width: 100%;
+	background: transparent;
+	z-index: 100;
+}
+    
+        .containter {
+            
+                position: absolute;
+                //max-width: 400px;
+                max-height: 450px;
+                -webkit-text-fill-color: rgb(2, 5, 8);
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                background: rgba(45, 133, 173, 0.6);
+                text-align: center;
+        }
+
+.containter2 {
+            
+        position: absolute;
+        -webkit-text-fill-color: rgb(2, 5, 8);
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background: rgba(130, 180, 204, 0.6);
+        //text-align: center;
+        padding-top: 7000px;
+}
+.table tr th{
+        text-align: center;
+}
+.ion-list 
+{
+    overflow-y: scroll;
+};
+.image{ 
+         
+        width: 160px !important; 
+        height : 160px !important;
+        margin-right: auto;
+        margin-left: auto;
+}

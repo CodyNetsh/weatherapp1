@@ -1,0 +1,169 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title><h2>Weather Forecast</h2></ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content class="background-image" >
+  {{values?.cod}}
+    <ion-grid>
+        <ion-row>
+            <ion-col width-100>
+    <ion-list>
+        
+            <ion-item>
+                <ion-label fixed>
+                    City : 
+                </ion-label>
+                <ion-input [(ngModel)]="city" name="city" type="text"></ion-input>
+            </ion-item>
+            <ion-button ion-button color="primary" (click)="searchCity()">Search</ion-button>
+           
+            </ion-list>
+            </ion-col>
+            </ion-row>
+            </ion-grid>
+            <div class="location">
+            <h2 ><ion-icon name="pin"></ion-icon>{{name}}</h2>            
+          </div>
+          
+      <div class ="containter"> 
+  <div *ngFor="let item of weatherData" >
+ 
+    <ion-grid>
+    <ion-row>
+        <ion-col width-50 offset-25>
+            <h3>{{item.dt_txt | date: 'EEEE'}}</h3>
+           <img src="http://openweathermap.org/img/w/{{item.weather[0].icon}}.png" class="image">
+                         <h1>{{item.main.temp| number:'1.0-0'}}&deg;C</h1>   
+     
+                      <h3 class="desc">{{item.weather[0].description}}</h3>
+                      <h4>{{item.dt_txt | date: 'dd MMMM yyyy hh:mm a'}}</h4>
+                      <ion-slides>
+                          <ion-slide>
+                            <ion-item>
+                              <p item-start>Min &nbsp;</p>
+                              <p item-end>{{item.main.temp_min  | number:'1.0-0'}}&deg;C</p>
+                            </ion-item>
+                            <br>
+                            <ion-item>
+                                <p item-start>Max &nbsp; </p>
+                                <p item-end>{{item.main.temp_max | number:'1.0-0'}}&deg;C</p>
+                              </ion-item>
+                          </ion-slide>
+                            </ion-slides>
+                </ion-col>
+    </ion-row>
+ </ion-grid>
+ <br>
+</div>
+</div>
+<br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
+ <br><br><br><br>
+
+    <table>
+      <tr>
+          <th>
+              <ion-item> 
+                  <ion-grid>
+                      <ion-row>
+                          <ion-col width-50 offset-25> 
+                  <h6>{{txt}}{{txt1}}</h6>                  
+                   <img src="http://openweathermap.org/img/w/{{values?.list[1].weather[0].icon}}.png" class="image1"> 
+              <h4>{{values?.list[1].main.temp| number:'1.0-0'}}&deg;C</h4>   
+              <h6>{{values?.list[1].dt_txt | date: 'dd MMMM yyyy'}}</h6>
+              <h6>{{values?.list[1].dt_txt | date: 'hh:mma'}}</h6>
+               </ion-col>
+              </ion-row>
+           </ion-grid>
+                </ion-item>
+              </th>
+              <th>
+                <ion-item> 
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col width-50 offset-25> 
+                    <h6>{{txt}}{{txt1}}</h6>                 
+                     <img src="http://openweathermap.org/img/w/{{values?.list[2].weather[0].icon}}.png" class="image1"> 
+                <h4>{{values?.list[2].main.temp| number:'1.0-0'}}&deg;C</h4> 
+                <h6>{{values?.list[2].dt_txt | date: 'dd MMMM yyyy'}}</h6>
+                <h6>{{values?.list[2].dt_txt | date: 'hh:mma'}}</h6>
+                 </ion-col>
+                </ion-row>
+             </ion-grid>
+                  </ion-item>
+                </th>
+                <th>
+                  <ion-item> 
+                      <ion-grid>
+                          <ion-row>
+                              <ion-col width-50 offset-25>
+                                <h6>{{txt}}{{txt1}}</h6>                 
+                       <img src="http://openweathermap.org/img/w/{{values?.list[3].weather[0].icon}}.png" class="image1"> 
+                  <h4>{{values?.list[3].main.temp| number:'1.0-0'}}&deg;C</h4> 
+                  <h6>{{values?.list[3].dt_txt | date: 'dd MMMM yyyy'}}</h6>
+                  <h6>{{values?.list[3].dt_txt | date: 'hh:mma'}}</h6>
+                   </ion-col>
+                  </ion-row>
+               </ion-grid>
+                    </ion-item>
+                  </th>
+                  </tr>
+                  </table>
+<br>
+
+
+
+      <ion-list>
+        <ion-item>  
+            <h5>{{values?.list[4].dt_txt | date: 'EEEE'}}</h5>
+            <img src="http://openweathermap.org/img/w/{{values?.list[4].weather[0].icon}}.png" class="image"> 
+            <h3>{{values?.list[4].main.temp| number:'1.0-0'}}&deg;C</h3>   
+             <h6 class="desc">{{values?.list[4].weather[0].description}}</h6>
+             <br>
+            <h6> {{values?.list[4].dt_txt | date: 'dd MMMM yyyy'}}</h6>
+        </ion-item> 
+        
+      <ion-item>   
+          
+          <h5>{{values?.list[12].dt_txt | date: 'EEEE'}}</h5>              
+           <img src="http://openweathermap.org/img/w/{{values?.list[12].weather[0].icon}}.png" class="image"> 
+<h3>{{values?.list[12].main.temp| number:'1.0-0'}}&deg;C</h3>   
+ <h6 class="desc">{{values?.list[12].weather[0].description}}</h6>
+ <br>
+<h6> {{values?.list[12].dt_txt | date: 'dd MMMM yyyy'}}</h6>
+
+</ion-item> 
+
+<ion-item> 
+  
+    <h5>{{values?.list[21].dt_txt | date: 'EEEE'}}</h5>
+ <img src="http://openweathermap.org/img/w/{{values?.list[21].weather[0].icon}}.png" class="image"> 
+<h3>{{values?.list[21].main.temp| number:'1.0-0'}}&deg;C</h3>   
+ <h6 class="desc">{{values?.list[21].weather[0].description}}</h6>
+<h6> {{values?.list[21].dt_txt | date: 'dd MMMM yyyy'}}</h6>
+  </ion-item>
+
+  <ion-item> 
+      <h5>{{values?.list[29].dt_txt | date: 'EEEE'}}</h5>             
+   <img src="http://openweathermap.org/img/w/{{values?.list[29].weather[0].icon}}.png" class="image"> 
+  <h3>{{values?.list[29].main.temp| number:'1.0-0'}}&deg;C</h3>   
+   <h6 class="desc">{{values?.list[29].weather[0].description}}</h6>
+  <h6> {{values?.list[29].dt_txt | date: 'dd MMMM yyyy'}}</h6>
+    </ion-item>
+ 
+    <ion-item> 
+        <h5>{{values?.list[37].dt_txt | date: 'EEEE'}}</h5>                  
+         <img src="http://openweathermap.org/img/w/{{values?.list[37].weather[0].icon}}.png" class="image"> 
+    <h3>{{values?.list[37].main.temp| number:'1.0-0'}}&deg;C</h3>   
+     <h6 class="desc">{{values?.list[37].weather[0].description}}</h6>
+    <h6>{{values?.list[37].dt_txt | date: 'dd MMMM yyyy'}}</h6>
+      </ion-item>
+      
+      </ion-list>
+       
+ 
+</ion-content>
